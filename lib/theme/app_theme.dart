@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   // Colors
@@ -32,116 +31,129 @@ class AppTheme {
         onSurface: textPrimary,
       ),
       scaffoldBackgroundColor: primaryColor,
-      textTheme: GoogleFonts.plusJakartaSansTextTheme(
-        ThemeData.dark().textTheme,
-      ).copyWith(
-        displayLarge: GoogleFonts.playfairDisplay(
+      fontFamily: 'PlusJakartaSans', // <-- default app font
+
+      textTheme: ThemeData.dark().textTheme.copyWith(
+        displayLarge: const TextStyle(
+          fontFamily: 'PlayfairDisplay',
           fontSize: 32,
           fontWeight: FontWeight.w700,
           color: textPrimary,
           letterSpacing: -0.5,
         ),
-        displayMedium: GoogleFonts.playfairDisplay(
+        displayMedium: const TextStyle(
+          fontFamily: 'PlayfairDisplay',
           fontSize: 26,
           fontWeight: FontWeight.w700,
           color: textPrimary,
         ),
-        headlineLarge: GoogleFonts.plusJakartaSans(
-          fontSize: 20,
+        headlineLarge: const TextStyle(
           fontWeight: FontWeight.w700,
+          fontSize: 20,
           color: textPrimary,
           letterSpacing: -0.3,
         ),
-        headlineMedium: GoogleFonts.plusJakartaSans(
+        headlineMedium: const TextStyle(
+          fontWeight: FontWeight.w600,
           fontSize: 18,
-          fontWeight: FontWeight.w600,
           color: textPrimary,
         ),
-        titleLarge: GoogleFonts.plusJakartaSans(
+        titleLarge: const TextStyle(
+          fontWeight: FontWeight.w600,
           fontSize: 16,
-          fontWeight: FontWeight.w600,
           color: textPrimary,
         ),
-        titleMedium: GoogleFonts.plusJakartaSans(
+        titleMedium: const TextStyle(
+          fontWeight: FontWeight.w600,
           fontSize: 14,
-          fontWeight: FontWeight.w600,
           color: textPrimary,
         ),
-        bodyLarge: GoogleFonts.plusJakartaSans(
-          fontSize: 15,
+        bodyLarge: const TextStyle(
           fontWeight: FontWeight.w400,
+          fontSize: 15,
           color: textSecondary,
           height: 1.6,
         ),
-        bodyMedium: GoogleFonts.plusJakartaSans(
-          fontSize: 13,
+        bodyMedium: const TextStyle(
           fontWeight: FontWeight.w400,
+          fontSize: 13,
           color: textSecondary,
           height: 1.5,
         ),
-        labelLarge: GoogleFonts.plusJakartaSans(
-          fontSize: 12,
+        labelLarge: const TextStyle(
           fontWeight: FontWeight.w600,
+          fontSize: 12,
           color: textTertiary,
           letterSpacing: 0.5,
         ),
       ),
-      appBarTheme: AppBarTheme(
+
+      appBarTheme: const AppBarTheme(
         backgroundColor: primaryColor,
         elevation: 0,
         scrolledUnderElevation: 0,
         centerTitle: false,
-        titleTextStyle: GoogleFonts.playfairDisplay(
+        titleTextStyle: TextStyle(
+          fontFamily: 'PlayfairDisplay',
           fontSize: 24,
           fontWeight: FontWeight.w700,
           color: textPrimary,
         ),
-        iconTheme: const IconThemeData(color: textPrimary),
+        iconTheme: IconThemeData(color: textPrimary),
       ),
-      cardTheme: CardTheme(
+
+      cardTheme: const CardThemeData(
         color: cardColor,
         elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.all(Radius.circular(16)),
         ),
       ),
+
       chipTheme: ChipThemeData(
         backgroundColor: chipBackground,
         selectedColor: accentColor,
-        labelStyle: GoogleFonts.plusJakartaSans(
+        labelStyle: const TextStyle(
           fontSize: 13,
           fontWeight: FontWeight.w600,
           color: textSecondary,
+          fontFamily: 'PlusJakartaSans',
         ),
-        secondaryLabelStyle: GoogleFonts.plusJakartaSans(
+        secondaryLabelStyle: const TextStyle(
           fontSize: 13,
           fontWeight: FontWeight.w600,
           color: textPrimary,
+          fontFamily: 'PlusJakartaSans',
         ),
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
       ),
-      inputDecorationTheme: InputDecorationTheme(
+
+      inputDecorationTheme: const InputDecorationTheme(
         filled: true,
         fillColor: cardColor,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.all(Radius.circular(12)),
           borderSide: BorderSide.none,
         ),
-        hintStyle: GoogleFonts.plusJakartaSans(
-          color: textTertiary,
+        hintStyle: TextStyle(
           fontSize: 14,
+          color: textTertiary,
+          fontFamily: 'PlusJakartaSans',
         ),
         prefixIconColor: textTertiary,
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       ),
-      snackBarTheme: SnackBarThemeData(
+
+      snackBarTheme: const SnackBarThemeData(
         backgroundColor: cardColor,
-        contentTextStyle: GoogleFonts.plusJakartaSans(color: textPrimary),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        contentTextStyle: TextStyle(
+          color: textPrimary,
+          fontFamily: 'PlusJakartaSans',
+        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
         behavior: SnackBarBehavior.floating,
       ),
     );
